@@ -25,7 +25,7 @@ class Preprocessing:
 
     def patch_preprocessing(self, image):
 
-        return extract_patches_2d(image, (self.height, self.width),max_patches=1)[0]
+        return extract_patches_2d(image, (self.height, self.width), max_patches=1)[0]
 
     def crop_preprocessing(self, image):
 
@@ -44,7 +44,7 @@ class Preprocessing:
 
         for (startX, startY, endX, endY) in coords:
             crop = image[startY:endY, startX:endX]
-            crop = cv2.resize(crop, (self.width, self.height), interpolation = self.inter)
+            crop = cv2.resize(crop, (self.width, self.height), interpolation=self.inter)
             crops.append(crop)
 
         if self.horiz:
